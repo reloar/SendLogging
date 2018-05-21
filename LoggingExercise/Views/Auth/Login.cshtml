@@ -1,0 +1,131 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Twitter -->
+    <meta name="twitter:site" content=@("@themepixels")>
+    <meta name="twitter:creator" content=@("@themepixels")>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Amanda">
+    <meta name="twitter:description" content="Premium Quality and Responsive UI for Dashboard.">
+    <meta name="twitter:image" content="http://themepixels.me/amanda/img/amanda-social.png">
+
+    <!-- Facebook -->
+    <meta property="og:url" content="http://themepixels.me/amanda">
+    <meta property="og:title" content="Bracket">
+    <meta property="og:description" content="Premium Quality and Responsive UI for Dashboard.">
+
+    <meta property="og:image" content="http://themepixels.me/amanda/img/amanda-social.png">
+    <meta property="og:image:secure_url" content="http://themepixels.me/amanda/img/amanda-social.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="600">
+
+    <!-- Meta -->
+    <meta name="description" content="Premium Quality and Responsive UI for Dashboard.">
+    <meta name="author" content="ThemePixels">
+
+
+    <title>ReloarHub</title>
+
+    <!-- vendor css -->
+    <link href="~/Content/lib/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="~/Content/lib/Ionicons/css/ionicons.css" rel="stylesheet">
+    <link href="~/Content/lib/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
+
+    <!-- Amanda CSS -->
+    <link rel="stylesheet" href="~/Content/css/amanda.css">
+</head>
+
+<body>
+
+    <div class="am-signin-wrapper">
+        <div class="am-signin-box">
+            <div class="row no-gutters">
+                <div class="col-lg-5">
+                    <div>
+                        <img src="~/Content/img/img5.jpg" class="wd-36 rounded-circle" alt="Image">
+                        <h2>ReloarHub</h2>
+                        <hr>
+
+                       @* <p>Don't have an account? <br> <a href="@Url.Action("Register","Auth")">Sign up Now</a></p>*@
+                    </div>
+                </div>
+
+
+                <div class="col-lg-7">
+                    <h5>Login</h5>
+
+
+                    <div class="alert alert-danger alert-dismissible fade in" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                        <strong>All fields required</strong>  @Html.ValidationSummary(false)
+                    </div>
+
+
+                    @using (Html.BeginForm("Login", "Auth", new { returnUrl = Request.QueryString["returnUrl"] }, FormMethod.Post))
+                    {
+                       
+
+                        <div class="form-group">
+                            <label class="form-control-label">Email:</label>
+
+                            <input type="email" name="Username" id="Username" required="" class="form-control" placeholder="Enter your email address">
+                        </div><!-- form-group -->
+
+                        <div class="form-group">
+                            <label class="form-control-label">Password:</label>
+                            <input type="password" name="Password" id="Password" required="" class="form-control" placeholder="Enter your password">
+                        </div><!-- form-group -->
+                        <div class="form-group m-b-30">
+                            <div class="col-xs-12">
+                                <div class="checkbox checkbox-primary">
+                                    <input id="checkbox5" type="checkbox">
+                                    <label for="checkbox5">
+                                        Remember me
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group mg-b-20"><a href="">Forgot Password</a></div>
+
+                        <button type="submit" class="btn btn-block">Sign In</button>
+
+                      
+                    }
+
+                  
+                </div><!-- col-7 -->
+
+
+            </div><!-- row -->
+            <p class="tx-center tx-white-5 tx-12 mg-t-15">Copyright &copy; @DateTime.Now.Year. All Rights Reserved. Reloar</p>
+        </div><!-- signin-box -->
+    </div><!-- am-signin-wrapper -->
+
+    <script src="~/Content/lib/jquery/jquery.js"></script>
+    <script src="~/Content/lib/popper.js/popper.js"></script>
+    <script src="~/Content/lib/bootstrap/bootstrap.js"></script>
+    <script src="~/Content/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
+
+    <script src="~/Content/js/amanda.js"></script>
+</body>
+</html>
+
